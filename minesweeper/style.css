@@ -1,0 +1,54 @@
+html, body {
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+.wrapper {
+	display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.board {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+}
+
+.row {
+	width: 100%;
+	line-height: 0px;
+}
+
+.cell {
+	width: 10%;
+    padding-top: 10%;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.text-wrapper {
+	position: absolute;
+	top: 50%;
+	bottom: 0;
+	left:0;
+	right: 0;
+}
+
+.cell:last-child {
+	border-right: 1px solid black;
+}
+
+.row:last-child .cell {
+	border-bottom: 1px solid black;
+}
