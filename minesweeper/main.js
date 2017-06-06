@@ -45,7 +45,10 @@ MineSweeper = (function($) {
 		$.ajax({
 			url: "https://mysterious-fortress-3493.herokuapp.com/init",
 			type: "POST",
-			data: data
+			data: data,
+			beforeSend: function(request) {
+				request.setRequestHeader("Origin", "http://127.0.0.1:4000");
+			}
 		}).done(function(response) {
 			console.log('response succeeded %o', response);
 			sessionPromise.resolve();
