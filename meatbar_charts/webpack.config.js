@@ -1,11 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './main.js',
+  entry: ['babel-polyfill', './main.js'],
   output: {
     path: __dirname + '/dist' ,
     filename: 'bundle.js'
@@ -18,22 +17,13 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'stage-0']
         }
       },
       {
         test: /\.css$/,
         exclude: '/node_modules/',
-        use: ExtractTextPlugin.extract({
-            fallback: [{
-                loader: 'style-loader',
-            }],
-            use: [{
-                loader: 'css-loader',
-            }, {
-                loader: 'postcss-loader',
-            }],
-        }),
+        use: [ 'style-loader', 'css-loader' ]
       },
       {
         test: /\.png$/,
@@ -63,7 +53,6 @@ module.exports = {
   },
   plugins:[
     new CleanWebpackPlugin(['dist'], {}),
-    new ExtractTextPlugin('./bundle.css'),
     new HtmlWebpackPlugin({
       template: './index.html',
       inject: false

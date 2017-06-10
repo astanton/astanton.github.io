@@ -1,6 +1,7 @@
 import api from './api.js';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import styles from './css/styles.css'
+import babelPolyfil from "babel-polyfill"
 
 import PersonTable from './views/personTable.jsx';
 import ConsumptionChart from './views/consumptionChart.jsx';
