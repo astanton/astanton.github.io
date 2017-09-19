@@ -6,4 +6,5 @@ Below are the links to the samples running:
 
 card_pairs - https://astanton.github.io/card_pairs/<br />
 image_crop - https://astanton.github.io/image_crop/<br />
-meatbar_charts - https://astanton.github.io/meatbar_charts/demo/
+meatbar_charts - https://astanton.github.io/meatbar_charts/demo/<br />
+post_pager - https://astanton.github.io/post_pager/

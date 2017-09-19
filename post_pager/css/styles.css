@@ -1,0 +1,261 @@
+body {
+  padding: 20px 50px;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+button {
+  color: #111;
+  background-color: #f7f7f9;
+  border: 1px solid #ddd;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  padding: 7px 12px;
+  font-size: 1rem;
+  line-height: 1.25;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background-color: #ddd;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+input {
+  height: 30px;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ListSummaryView {
+  text-align: center;
+}
+
+.ListHeaderView {
+  text-align: center;
+  padding: 30px;
+  font-weight: bold;
+}
+
+div.sorter {
+  padding-right: 20px;
+}
+
+div.sorter select {
+  font-size: 16px;
+  height: 30px;
+}
+
+div.search {
+  padding-right: 20px;
+}
+
+div.sorter,
+div.search {
+  display: inline-block;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+table, th, td {
+  width: 100%;
+  text-align: left;
+}
+
+th, td {
+  flex: 2;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+table#summary-data {
+  width: 680px;
+  display: inline-flex;
+}
+
+table#summary-data th,
+table#summary-data td {
+  flex-grow: 1;
+}
+
+table#table-data {
+  width: 100%;
+  min-height: 264px;
+  min-width: 690px;
+}
+
+table#table-data th:last-child,
+table#table-data td:last-child {
+  flex: 1;
+  overflow: hidden;
+  text-align: center;
+}
+
+th:not(:last-child), td:not(:last-child) {
+  min-width: 150px;
+}
+
+th:last-child, td:last-child {
+  min-width: 70px;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+}
+
+tr:first-child {
+  background-color: #f7f7f9;
+  border-radius: 5px;
+  border-bottom: 1px solid #ddd;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+tr.table-row {
+  border-top: 1px solid #ddd;
+}
+
+tr.table-row:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+tr:hover td button {
+  display: inline-block;
+}
+
+td {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+th:first-child,
+td:first-child {
+  flex: 8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td button {
+  display: none;
+}
+
+.table .footer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.modal .details {
+  height: 600px;;
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -400px;
+  background-color: white;
+  display: flex;
+  flex: 3 0px;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal .header {
+  padding: 20px 0px 20px 20px;
+  border-bottom: 1px solid black;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #f7f7f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal label {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.modal .content {
+  flex-grow: 1;
+}
+
+.modal .content .row {
+  display: flex;
+  padding: 20px;
+}
+
+.modal .content .row > div {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.modal .content .row > div:not(.message) {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.modal .content .row > div > div {
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+.modal .content .row > div:not(.message) > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal .content .row .message div {
+  overflow-y: auto;
+  height: 175px;
+}
+
+.modal .content .row img {
+  height: 24px;
+  width: 24px;
+  padding-left: 10px;
+}
+
+.modal .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+}
